@@ -48,7 +48,7 @@ func buildPathItem(ws *restful.WebService, r restful.Route, existingPathItem spe
 
 func buildOperation(ws *restful.WebService, r restful.Route, cfg Config) *spec.Operation {
 	o := spec.NewOperation(r.Operation)
-	o.Description = r.Doc
+	o.Description = r.Notes
 	// take the first line to be the summary
 	if lines := strings.Split(r.Doc, "\n"); len(lines) > 0 {
 		o.Summary = lines[0]
